@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    vertical-align: baseline;
+    line-height: 1;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.container {
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    height: 80px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1351d8;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.video-destaque {
+    position: relative;
+    width: auto;   
+    height: 640px;  
+    margin: 0 auto;
+}
+
+.video-destaque iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.anuncio-produto {
+    text-decoration: none;
+    color: #1b357e;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    margin: 40px;
+}
+
+.tabela-comparativa{
+    display: flex;
+    justify-content: center;  
+    gap: 20px;  
+    flex-wrap: wrap;  
+    text-align: left;
+}
+
+.modelo-item {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.modelo-item img {
+    width: 100%;
+    border-radius: 8px 8px 0 0; 
+    display: block;
+    margin-bottom: 15px; 
+    transition: transform 0.4s ease-in-out; 
+}
+
+.modelo-item:hover img {
+    transform: scale(1.40);
+}
+
+.modelo-infos {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px; 
+}
+
+.modelo-infos input[type="checkbox"] {
+    margin-top: 17px; 
+    width: auto;
+    height: auto;
+    flex-shrink: 0; 
+}
+
+.modelo-infos h3 {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+    transform: translateY(-3px); 
+}
+
+.modelo-infos p {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.btn-comparar {
+    display: inline-block; 
+    background-color: #1351d8;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 32px; 
+    margin: 30px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; /
+}
+
+
+.btn-comparar:hover {
+    background-color: #1041ad;
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /
+}
+
+footer {
+    background-color: #1b357e;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo-azul {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 56px;
+}
+
+
+.redes-sociais {
+    display: flex;
+    gap: 10px;
+    justify-content: last baseline;
+    align-items: center;
+    margin: 20px;
+}
+
+.icones-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.redes-sociais img {
+    max-width: 50px;
+    width: 100%;
+    height: 46px;
+    display: block;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #666;
+
+}
