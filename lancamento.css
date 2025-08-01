@@ -5,10 +5,9 @@
 body {
     margin: 0;
     padding: 0;
-    border: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     vertical-align: baseline;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 header {
@@ -19,7 +18,7 @@ header {
 
 .container {
     padding: 20px;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -43,14 +42,15 @@ nav ul {
     font-size: 20px;
 }
 
-nav ul li {
-    margin: 10px;
-}
-
 nav ul li a {
     text-decoration: none;
     color: #1351d8;
     font-weight: bold;
+}
+
+nav ul li a:hover {
+color: #007BFF;
+transition: all 0.2s ease;
 }
 
 main {
@@ -61,9 +61,12 @@ main {
 
 .video-destaque {
     position: relative;
-    width: auto;   
-    height: 640px;  
+    width: 100%;
+  /*  max-width: 1200px; */
+    height: 640px;
     margin: 0 auto;
+    background-color: #fff;
+
 }
 
 .video-destaque iframe {
@@ -81,118 +84,174 @@ main {
     font-size: 22px;
     letter-spacing: 1px;
     text-align: center;
-    position: relative;
-    margin: 40px;
+    display: block;  
+    margin: 30px 20px 5px;
 }
 
-.tabela-comparativa{
+.tabela-comparativa {
     display: flex;
-    justify-content: center;  
-    gap: 20px;  
-    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     text-align: left;
 }
 
 .modelo-item {
+    position: relative;
     width: 280px;
     display: flex;
     flex-direction: column;
     background-color: #fff;
     border-radius: 8px;
-    margin: 20px;
+    margin: 20px 10px;
+    overflow: visible;
+    padding-bottom: 2px;
 }
 
 .modelo-item img {
-    width: 100%;
-    border-radius: 8px 8px 0 0; 
-    display: block;
-    margin-bottom: 15px; 
-    transition: transform 0.4s ease-in-out; 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+
 }
 
-.modelo-item:hover img {
-    transform: scale(1.40);
+.modelo-item img:hover {
+    transform: scale(1.2);
+
 }
 
 .modelo-infos {
     display: flex;
-    align-items: flex-start;
-    gap: 8px; 
+    align-items: center;
+    gap: 6.6px;
+    margin: 17px 0 10px 0;
+    
 }
 
 .modelo-infos input[type="checkbox"] {
-    margin-top: 17px; 
-    width: auto;
-    height: auto;
-    flex-shrink: 0; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #1351d8;  
+    background-color: white;
+    transition: all 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+
+}
+
+.modelo-infos input[type="checkbox"]:checked {
+    background-color: #007BFF;  
+    border-color: #1351d8;
+}
+
+.modelo-infos input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .modelo-infos h3 {
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #333;
     margin: 0;
-    transform: translateY(-3px); 
+    margin-top: 5px;
+     
 }
 
 .modelo-infos p {
-    font-size: 0.8rem;
+    font-size: 12px;
     color: #666;
+    margin: 0;
+    margin-bottom: 10px;
+    
+}
+
+.icone-inf {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    
+}
+
+.icone-inf img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: all 0.3s esse;
+    cursor: pointer;
+}
+
+.icone-inf img:hover {
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 .btn-comparar {
-    display: inline-block; 
+    
+    display: inline-block;
     background-color: #1351d8;
     color: white;
     font-size: 16px;
     font-weight: 600;
-    padding: 12px 32px; 
-    margin: 30px auto;
+    padding: 12px 32px;
+    margin: 8px auto 30px auto;
+    margin-top: 8px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    transition: all 0.3s ease; /
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-
 .btn-comparar:hover {
-    background-color: #1041ad;
-    transform: translateY(-4px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /
+    background-color:#007BFF;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer {
     background-color: #1b357e;
     color: white;
-    padding: 15px 0;
+    padding: 20px;
     text-align: center;
     position: relative;
-    margin-bottom: 5px;
     width: 100%;
+
 }
 
-.logo-azul {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 56px;
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;  
+    gap: 20px;
 }
-
 
 .redes-sociais {
     display: flex;
-    gap: 10px;
-    justify-content: last baseline;
     align-items: center;
-    margin: 20px;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .icones-rodape {
     display: flex;
-    justify-content: center;
     gap: 10px;
-    margin-top: 10px;
 }
 
 .redes-sociais img {
@@ -202,12 +261,53 @@ footer {
     display: block;
 }
 
-.copyright {
+.logo-azul {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    color: #666;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 56px;
+}
 
+.copyright {
+    font-size: 12px;
+    color: #868686;
+    margin: 0;
+    width: 100%; 
+    margin-top: 20px;
+    order: 3; 
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center;
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .anuncio-produto {
+        font-size: 18px;
+    }
+    
+    .footer-container {
+        flex-direction: column; 
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .copyright {
+        margin-top: 10px;
+    }
 }
