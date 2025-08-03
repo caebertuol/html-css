@@ -3,13 +3,19 @@ html {
 }
 
 body {
+
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+    border: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.5;
+    vertical-align: baseline;
+    line-height: 1;
     overflow-x: hidden;
+    min-height: 100vh;
+
 }
 
 header {
@@ -48,6 +54,7 @@ nav ul li a {
     text-decoration: none;
     color: #1351d8;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -56,16 +63,22 @@ nav ul li a:hover {
 }
 
 main {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
     flex: 1;
-    padding: 20px 0;
-    text-align: center;
+    gap: 10px;
 }
 
 
-.destaque .imagem-ranger {
-    max-width: 95%;
+.destaque .imagem-ranger {  
+    max-width: 100%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 6px 6px rgb(58, 67, 70);
 }
 
 .anuncio-produto {
@@ -89,12 +102,13 @@ p a:hover {
 }
 
 footer {
-    background-color: #1b357e;
+ background-color: #1b357e;
     color: white;
     padding: 40px;
     text-align: center;
     position: relative;
     width: 100%;
+    margin-bottom: 10px;
 
 }
 
@@ -119,18 +133,25 @@ footer {
     top: 50%;
     transform: translateY(-50%);
 }
-
-.icones-rodape {
-    display: flex;
-    gap: 10px;
-}
-
 .redes-sociais img {
     max-width: 50px;
     width: 100%;
     height: 46px;
     display: block;
+  
 }
+
+.icones-rodape {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.3s esse;
+}
+
+.icones-rodape img:hover {
+    transform: scale(1.1);
+
+}
+
 
 .logo-azul {
     position: absolute;
@@ -141,6 +162,7 @@ footer {
 }
 
 .copyright {
+    
     font-size: 12px;
     color: #868686;
     margin: 0;
