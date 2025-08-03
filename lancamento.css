@@ -1,13 +1,21 @@
-* {
-    box-sizing: border-box;
+html {
+    height: 100%;
 }
 
 body {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
+    border: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     vertical-align: baseline;
-    line-height: 1.5;
+    line-height: 1;
+    overflow-x: hidden;
+    min-height: 100vh;
+
 }
 
 header {
@@ -46,6 +54,7 @@ nav ul li a {
     text-decoration: none;
     color: #1351d8;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -61,11 +70,12 @@ main {
 
 .video-destaque {
     position: relative;
-    width: 100%;
+    width: 98%;
     /*  max-width: 1200px; */
     height: 640px;
     margin: 0 auto;
     background-color: #fff;
+    flex: 1;
 
 }
 
@@ -76,17 +86,22 @@ main {
     width: 100%;
     height: 100%;
     border: none;
+    border-radius: 8px;
+    box-shadow: 5px 7px 7px rgb(58, 67, 70);
 }
 
 .anuncio-produto {
-    text-decoration: none;
-    color: #1b357e;
-    font-size: 22px;
-    letter-spacing: 1px;
-    text-align: center;
-    display: block;
-    margin: 30px 20px 5px;
+  text-decoration: none;
+  color: #1b357e;
+  font-size: 18px;
+  line-height: 1.5;  
+  display: block;
+  margin: 30px 60px 5px;  
+
+
 }
+
+
 
 .tabela-comparativa {
     display: flex;
@@ -162,7 +177,7 @@ main {
     font-size: 14px;
     color: #333;
     margin: 0;
-    margin-top: 5px;
+    margin-top: 10px;
 
 }
 
@@ -171,6 +186,7 @@ main {
     color: #666;
     margin: 0;
     margin-bottom: 10px;
+    margin-top: 3px;
 
 }
 
@@ -220,7 +236,7 @@ main {
 footer {
     background-color: #1b357e;
     color: white;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     position: relative;
     width: 100%;
@@ -250,11 +266,6 @@ footer {
     transform: translateY(-50%);
 }
 
-.icones-rodape {
-    display: flex;
-    gap: 10px;
-}
-
 .redes-sociais img {
     max-width: 50px;
     width: 100%;
@@ -262,21 +273,34 @@ footer {
     display: block;
 }
 
+.icones-rodape {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.3s esse;
+}
+
+.icones-rodape img:hover {
+    transform: scale(1.1);
+
+}
+
 .logo-azul {
     position: absolute;
-    right: 20px;
+    right: 100px;
     top: 50%;
     transform: translateY(-50%);
     height: 56px;
 }
 
 .copyright {
+
     font-size: 12px;
     color: #868686;
     margin: 0;
     width: 100%;
     margin-top: 20px;
     order: 3;
+
 }
 
 @media (max-width: 768px) {
