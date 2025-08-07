@@ -14,14 +14,14 @@ body {
     vertical-align: baseline;
     line-height: 1;
     overflow-x: hidden;
-    min-height: 100vh;
+
 }
 
 header {
     background-color: #ffffff;
-    padding: 10px 0;
+    padding: 1rem 0;
     border-bottom: 1px solid #eee;
-
+    position: sticky;
 }
 
 .container {
@@ -37,7 +37,7 @@ header {
 .logo {
     position: absolute;
     left: 20px;
-    height: 80px;
+    height: 70px;
 }
 
 nav ul {
@@ -50,21 +50,40 @@ nav ul {
     font-size: 20px;
 }
 
-nav ul li a {
+nav a {
+    position: relative;
     text-decoration: none;
     color: #1351d8;
-    font-weight: bold;
+    font-weight: 620;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav a:hover {
     color: #007BFF;
-    transition: all 0.2s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 main {
 
-    padding: 40px;
+    padding: 1.875rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,38 +93,42 @@ main {
 
 }
 
+
 .ranger-vermelha {
-    width: 360px;
+    width: 400px;
     background-color: #fff;
     margin-right: 80px;
+    padding: 0 20px;
 
 }
 
 
 .ranger-vermelha img {
     width: 100%;
+    height: auto;
     position: relative;
-    border-radius: 10px;
     transition: transform 0.4s ease-in-out;
-
 }
 
-
 .ranger-vermelha:hover img {
-    transform: scale(1.2);
-    filter: brightness(1.1) saturate(1.1);
+    transform: scale(1.1);
 }
 
 .formulario {
     width: 100%;
     max-width: 600px;
     padding: 20px;
+    color: #333;
+    font-size: 13.5px;
+
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+
 }
 
 form input,
@@ -113,20 +136,35 @@ form select,
 form textarea {
     width: 100%;
     padding: 10px;
-    font-size: 1em;
-    border-radius: 8px;
+    font-size: 0.9rem;
+    border-radius: 6px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-family: inherit;
+    background-color: #f9f9f9;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #ccc;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgb(0, 39, 76, 0.1);
 }
 
 form select {
 
-    background-color: white;
+    background-color: #f9f9f9;
     padding: 12px;
-    font-size: 1em;
+    font-size: 0.9rem;
     font-family: inherit;
     width: 100%;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 30px;
 }
 
 
@@ -135,15 +173,17 @@ form select {
     background-color: #1351d8;
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: 15.5px;
     font-weight: 600;
-    padding: 11px 70px;
+    padding: 11px 60px;
     margin: 5px auto;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -157,11 +197,11 @@ form select {
 footer {
     background-color: #1b357e;
     color: white;
-    padding: 40px;
+    padding: 1.875rem;
     text-align: center;
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
+
 
 }
 
@@ -181,7 +221,7 @@ footer {
     align-items: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
-    gap: 10px;
+    gap: 6px;
     margin-bottom: 20px;
     position: absolute;
     left: 20px;
@@ -199,7 +239,7 @@ footer {
 .icones-rodape {
     display: flex;
     gap: 10px;
-    transition: transform 0.3s esse;
+    transition: transform 0.3s ease;
 }
 
 .icones-rodape img:hover {
@@ -231,7 +271,9 @@ footer {
         flex-direction: column;
         justify-content: center;
         gap: 20px;
-        padding: 20px;
+        flex-wrap: wrap;
+
+
     }
 
     .logo {
@@ -239,23 +281,53 @@ footer {
     }
 
     nav ul {
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: center;
         gap: 15px;
         font-size: 16px;
     }
 
-    .anuncio-produto {
-        font-size: 18px;
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ranger-vermelha {
+        width: 60%;
+        margin-right: 0;
+        padding: 0 10px;
+    }
+
+    .formulario {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 20px;
     }
 
     .footer-container {
-        flex-direction: column;
-        justify-content: center;
-        gap: 25px;
+        flex-direction: row;
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+
+        gap: 15px;
+        text-align: center;
+
+    }
+
+    .logo-azul {
+
+        height: 50px;
+    }
+
+    .redes-sociais {
+        margin-bottom: 0;
+
     }
 
     .copyright {
-        margin-top: 10px;
+        margin: 0 auto;
+        font-size: 11px;
+
     }
 }
